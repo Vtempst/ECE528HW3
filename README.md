@@ -52,6 +52,8 @@ void UART2_Init()
 
 (b) Suppose that you have a main program that is transmitting data using the eUSCI_A2 module given the configuration in part (a). Draw the waveform for the UART TX data line if the main program is transmitting two bytes: 0xF1 followed by 0x55. Clearly label the start bits, data bits, and stop bits. Assume that there is a 50 ms delay between the two bytes.
 
+<img src="Q4B.png">
+
 5. What is the function of the eUSCI_B module? How does SPI communication differ
 from UART communication in terms of:
 - Synchronization - SPI is synchronous while UART is asynchronous
@@ -112,6 +114,7 @@ Bit 6-7 selects the clock source used by the eUSCI_B module.
     - P1.7: MISO (UCB0SOMI)
     - P9.0: Active Low Chip Select (GPIO)
 
+```
 void EUSCI_B0_SPI_Init()
 {
     EUSCI_B0->CTLW0 |= 0x8000; // SPI Mode: 0
@@ -142,3 +145,5 @@ void EUSCI_B0_SPI_Init()
 - Chip Select (Active Low)
 - SCLK
 - MOSI
+
+<img src="Q8B.png" width="700">
